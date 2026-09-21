@@ -12,6 +12,7 @@
 	left: var(--sidebar-width);
 	right: 0;
 	z-index: var(--z-dropdown);
+	transition: var(--transition-base);
 	h1 {
 		font-size: var(--font-size-lg);
 		font-weight: var(--font-weight-bold);
@@ -48,12 +49,18 @@ header .header-left {
 	color: var(--gray-300);
 }
 
+.expanded-header {
+	left: 0 !important;
+	transition: var(--transition-base);
+}
+
 /* ============================================
    RESPONSIVE — TABLET
    ============================================ */
 @media (max-width: 1024px) {
 	.header {
 		left: 150px;
+		transition: var(--transition-base);
 	}
 }
 
@@ -63,5 +70,6 @@ header .header-left {
 @media (max-width: 768px) {
 	.header {
 		left: 60px;
+		transition: var(--transition-base);
 	}
 }

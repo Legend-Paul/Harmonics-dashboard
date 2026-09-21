@@ -20,6 +20,7 @@ function App() {
 	const [activePage, setActivePage] = useState("home");
 	const [data, setData] = useState(dummyData);
 	const [loading, setLoading] = useState(false);
+	const [navCollapsed, setNavCollapsed] = useState(false);
 
 	// Simulate ESP32 data updates every 5 seconds
 	useEffect(() => {
@@ -79,9 +80,18 @@ function App() {
 
 	return (
 		<div className="app">
-			<Sidebar activePage={activePage} setActivePage={setActivePage} />
+			<Sidebar
+				activePage={activePage}
+				setActivePage={setActivePage}
+				navCollapsed={navCollapsed}
+			/>
 			<div className="main-content">
-				<Header data={data} />
+				<Header
+					data={data}
+					setActivePage={setActivePage}
+					setNavCollapsed={setNavCollapsed}
+					navCollapsed={navCollapsed}
+				/>
 				{renderPage()}
 			</div>
 		</div>

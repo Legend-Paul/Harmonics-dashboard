@@ -114,9 +114,11 @@ const menuItems = [
 	},
 ];
 
-function Sidebar({ activePage, setActivePage }) {
+function Sidebar({ activePage, setActivePage, navCollapsed }) {
 	return (
-		<div className="sidebar">
+		<div
+			className={`sidebar ${navCollapsed ? "collapsed-sidebar" : "expanded-sidebar"}`}
+		>
 			<div className="sidebar-header">
 				<h2>ESP32 AHF</h2>
 			</div>

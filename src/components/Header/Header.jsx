@@ -1,7 +1,12 @@
 import "./Header.css";
-function Header({ data }) {
+function Header({ data, setNavCollapsed, navCollapsed }) {
+	const handleNavCollapsing = () => {
+		setNavCollapsed((prev) => !prev);
+	};
 	return (
-		<header className="header">
+		<header
+			className={`header ${!navCollapsed ? "collapsed-header" : "expanded-header"}`}
+		>
 			<div className="header-left">
 				<svg
 					width="20"
@@ -12,6 +17,7 @@ function Header({ data }) {
 					strokeWidth="2"
 					strokeLinecap="round"
 					strokeLinejoin="round"
+					onClick={handleNavCollapsing}
 				>
 					<line x1="3" y1="6" x2="21" y2="6" />
 					<line x1="3" y1="12" x2="21" y2="12" />

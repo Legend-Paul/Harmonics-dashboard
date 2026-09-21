@@ -140,6 +140,19 @@
 }
 
 /* ============================================
+   SIDEBAR TOGGLING (Collapsed/Expanded)
+   ============================================ */
+.collapsed-sidebar {
+	transform: translateX(-100%);
+	transition: var(--transition-base);
+}
+
+.expanded-sidebar {
+	transform: translateX(0);
+	transition: var(--transition-base);
+}
+
+/* ============================================
    SIDEBAR FOOTER (Optional)
    ============================================ */
 
@@ -182,6 +195,12 @@
 
 .sidebar::-webkit-scrollbar-thumb:hover {
 	background: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================
+   NAV COLLAPSING ANIMATION
+   ============================================ */
+@keyframes hideSidebar {
 }
 
 /* ============================================
