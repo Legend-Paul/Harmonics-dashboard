@@ -8,7 +8,7 @@ import RealTime from "./pages/RealTime/RealTime";
 import HarmonicAnalysis from "./pages/HarmonicAnalysis/HarmonicAnalysis";
 import EnergyMonitoring from "./pages/EnergyMonitoring/EnergyMonitoring";
 import SystemStatus from "./pages/SystemStatus";
-import Settings from "./pages/Settings";
+import Settings from "./pages/Settings/Settings";
 import {
 	dummyData,
 	voltageTrend,
