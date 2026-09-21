@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import "./index.css";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
+import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import RealTime from "./pages/RealTime";
 import HarmonicAnalysis from "./pages/HarmonicAnalysis";
@@ -80,17 +81,7 @@ function App() {
 		<div className="app">
 			<Sidebar activePage={activePage} setActivePage={setActivePage} />
 			<div className="main-content">
-				<header className="header">
-					<h1>Smart Energy Monitoring System</h1>
-					<div className="header-right">
-						<span className={`status-badge ${data.status}`}>
-							{data.status.toUpperCase()}
-						</span>
-						<span className="timestamp">
-							{new Date(data.timestamp).toLocaleTimeString()}
-						</span>
-					</div>
-				</header>
+				<Header data={data} />
 				{renderPage()}
 			</div>
 		</div>

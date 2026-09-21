@@ -5,16 +5,17 @@
 .sidebar {
 	width: var(--sidebar-width);
 	min-height: 100vh;
-	background-color: var(--primary-color);
+	background-color: var(--primary-dark);
 	display: flex;
 	flex-direction: column;
 	padding: 0;
-	position: sticky;
+	position: fixed;
 	top: 0;
 	height: 100vh;
 	overflow-y: auto;
 	transition: width var(--transition-base);
 	flex-shrink: 0;
+	z-index: var(--z-dropdown);
 }
 
 /* ============================================
@@ -189,7 +190,7 @@
 
 @media (max-width: 1024px) {
 	.sidebar {
-		width: 200px;
+		width: 150px;
 	}
 
 	.sidebar-header h2 {

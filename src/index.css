@@ -4,12 +4,16 @@
 
 :root {
 	/* Primary Colors */
-	--primary-color: #1a1a2e;
-	--primary-light: #16213e;
-	--primary-dark: #0f0f1a;
+	--primary-color: #03337a;
+	--primary-light: #0e63e2;
+	--primary-dark: #021f4a;
 	--accent-color: #00d4ff;
 	--accent-hover: #00b8e6;
 	--accent-light: #e6f9ff;
+
+	--secondary-color: #9c0606;
+	--secondary-light: #fc0505;
+	--secondary-dark: #4a0202;
 
 	/* Status Colors */
 	--success-color: #28a745;

@@ -1,0 +1,61 @@
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: var(--spacing-md) var(--spacing-lg);
+	background-color: var(--primary-light);
+	color: var(--gray-300);
+	height: var(--header-height);
+	box-shadow: var(--shadow-sm);
+	position: fixed;
+	top: 0;
+	left: var(--sidebar-width);
+	right: 0;
+	z-index: var(--z-dropdown);
+	h1 {
+		font-size: var(--font-size-lg);
+		font-weight: var(--font-weight-bold);
+		margin: 0;
+		color: var(--gray-300);
+	}
+}
+
+.header .header-right {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+}
+
+.header .online {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	font-size: var(--font-size-sm);
+	color: var(--success-light);
+}
+
+.header .offline {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+	font-size: var(--font-size-sm);
+	color: var(--gray-300);
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+@media (max-width: 1024px) {
+	.header {
+		left: 150px;
+	}
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE (Collapsed Sidebar)
+   ============================================ */
+@media (max-width: 768px) {
+	.header {
+		left: 60px;
+	}
+}
