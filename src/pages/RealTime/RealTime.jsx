@@ -1,3 +1,4 @@
+import "./RealTime.css";
 function RealTime({ data }) {
 	const phases = ["R", "Y", "B"];
 

@@ -7,6 +7,7 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 } from "recharts";
+import "./HarmonicAnalysis.css";
 
 function HarmonicAnalysis({ data, harmonicSpectrum }) {
 	return (

@@ -1,0 +1,224 @@
+/* ============================================
+   THD SUMMARY (Voltage & Current THD Cards)
+   ============================================ */
+
+.thd-summary {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--spacing-base);
+	margin-bottom: var(--spacing-lg);
+}
+
+.thd-card {
+	background-color: var(--white);
+	border-radius: var(--radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+	transition: all var(--transition-base);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	position: relative;
+	overflow: hidden;
+	border-left: 4px solid var(--accent-color);
+}
+
+.thd-card:hover {
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
+}
+
+.thd-card h3 {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--gray-600);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin: 0;
+}
+
+.thd-value {
+	font-size: var(--font-size-3xl);
+	font-weight: var(--font-weight-bold);
+	color: var(--gray-900);
+	margin: 0;
+	line-height: 1.1;
+}
+
+.thd-limit {
+	font-size: var(--font-size-xs);
+	color: var(--gray-500);
+	font-style: italic;
+}
+
+.thd-status {
+	display: inline-block;
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-semibold);
+	padding: 4px 12px;
+	border-radius: var(--radius-full);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	align-self: flex-start;
+	margin-top: var(--spacing-xs);
+}
+
+.thd-status.compliant {
+	background-color: var(--success-light);
+	color: var(--success-dark);
+}
+
+.thd-status.warning {
+	background-color: var(--warning-light);
+	color: var(--warning-dark);
+}
+
+.thd-status.non-compliant {
+	background-color: var(--danger-light);
+	color: var(--danger-dark);
+}
+
+/* Card Accent Colors */
+.thd-card:nth-child(1) {
+	border-left-color: var(--info-color);
+}
+
+.thd-card:nth-child(2) {
+	border-left-color: var(--accent-color);
+}
+
+/* ============================================
+   HARMONICS TABLE
+   ============================================ */
+
+.harmonics-table {
+	background-color: var(--white);
+	border-radius: var(--radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+}
+
+.harmonics-table h3 {
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-semibold);
+	color: var(--gray-800);
+	margin: 0 0 var(--spacing-base) 0;
+}
+
+.harmonics-table table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: var(--font-size-base);
+}
+
+.harmonics-table thead {
+	background-color: var(--gray-100);
+}
+
+.harmonics-table th {
+	padding: var(--spacing-md) var(--spacing-base);
+	text-align: left;
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-semibold);
+	color: var(--gray-700);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	border-bottom: 2px solid var(--gray-300);
+}
+
+.harmonics-table td {
+	padding: var(--spacing-md) var(--spacing-base);
+	border-bottom: 1px solid var(--gray-200);
+	color: var(--gray-800);
+	font-size: var(--font-size-base);
+}
+
+.harmonics-table tbody tr:hover {
+	background-color: var(--gray-50);
+}
+
+.harmonics-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+/* Compliant Badge in Table */
+.compliant {
+	display: inline-block;
+	padding: 3px 10px;
+	border-radius: var(--radius-full);
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-semibold);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	background-color: var(--success-light);
+	color: var(--success-dark);
+}
+
+.non-compliant {
+	display: inline-block;
+	padding: 3px 10px;
+	border-radius: var(--radius-full);
+	font-size: var(--font-size-xs);
+	font-weight: var(--font-weight-semibold);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	background-color: var(--danger-light);
+	color: var(--danger-dark);
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+	.thd-summary {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.thd-value {
+		font-size: var(--font-size-2xl);
+	}
+
+	.harmonics-table {
+		padding: var(--spacing-base);
+	}
+
+	.harmonics-table th,
+	.harmonics-table td {
+		padding: var(--spacing-sm) var(--spacing-md);
+		font-size: var(--font-size-sm);
+	}
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+
+@media (max-width: 640px) {
+	.thd-summary {
+		grid-template-columns: 1fr;
+	}
+
+	.thd-card {
+		padding: var(--spacing-base);
+	}
+
+	.thd-value {
+		font-size: var(--font-size-xl);
+	}
+
+	.harmonics-table {
+		padding: var(--spacing-base);
+		overflow-x: auto;
+	}
+
+	.harmonics-table table {
+		min-width: 400px;
+	}
+
+	.harmonics-table th,
+	.harmonics-table td {
+		padding: var(--spacing-sm);
+		font-size: var(--font-size-xs);
+	}
+}

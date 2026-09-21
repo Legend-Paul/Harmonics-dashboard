@@ -1,0 +1,246 @@
+/* ============================================
+   REAL-TIME GRID (Phase Cards)
+   ============================================ */
+
+.realtime-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--spacing-base);
+	margin-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   PHASE CARD
+   ============================================ */
+
+.phase-card {
+	background-color: var(--white);
+	border-radius: var(--radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+	transition: all var(--transition-base);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-base);
+	position: relative;
+	overflow: hidden;
+	border-top: 4px solid var(--accent-color);
+}
+
+.phase-card:hover {
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
+}
+
+.phase-card h3 {
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-bold);
+	color: var(--gray-900);
+	margin: 0;
+	padding-bottom: var(--spacing-sm);
+	border-bottom: 1px solid var(--gray-200);
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-sm);
+}
+
+/* Phase Indicator Dot */
+.phase-card h3::before {
+	content: "";
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: var(--accent-color);
+	display: inline-block;
+}
+
+/* Phase-Specific Colors */
+.phase-card:nth-child(1) {
+	border-top-color: #ff0000;
+}
+
+.phase-card:nth-child(1) h3::before {
+	background-color: #ff0000;
+}
+
+.phase-card:nth-child(2) {
+	border-top-color: #ffcc00;
+}
+
+.phase-card:nth-child(2) h3::before {
+	background-color: #ffcc00;
+}
+
+.phase-card:nth-child(3) {
+	border-top-color: #0000ff;
+}
+
+.phase-card:nth-child(3) h3::before {
+	background-color: #0000ff;
+}
+
+/* ============================================
+   PHASE DATA ROWS
+   ============================================ */
+
+.phase-data {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+}
+
+.data-row {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--spacing-sm) var(--spacing-md);
+	background-color: var(--gray-50);
+	border-radius: var(--radius-md);
+	font-size: var(--font-size-base);
+	transition: background-color var(--transition-fast);
+}
+
+.data-row:hover {
+	background-color: var(--gray-100);
+}
+
+.data-row span:first-child {
+	font-weight: var(--font-weight-medium);
+	color: var(--gray-600);
+}
+
+.data-row span:last-child {
+	font-weight: var(--font-weight-bold);
+	color: var(--gray-900);
+	font-size: var(--font-size-md);
+}
+
+/* ============================================
+   SUMMARY CARD
+   ============================================ */
+
+.summary-card {
+	background-color: var(--white);
+	border-radius: var(--radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+	border-top: 4px solid var(--accent-color);
+}
+
+.summary-card h3 {
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-semibold);
+	color: var(--gray-800);
+	margin: 0 0 var(--spacing-base) 0;
+	padding-bottom: var(--spacing-sm);
+	border-bottom: 1px solid var(--gray-200);
+}
+
+.summary-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--spacing-base);
+}
+
+.summary-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--spacing-md) var(--spacing-base);
+	background-color: var(--gray-50);
+	border-radius: var(--radius-md);
+	font-size: var(--font-size-base);
+	border-left: 3px solid var(--accent-color);
+	transition: all var(--transition-fast);
+}
+
+.summary-item:hover {
+	background-color: var(--gray-100);
+}
+
+.summary-item span:first-child {
+	font-weight: var(--font-weight-medium);
+	color: var(--gray-600);
+}
+
+.summary-item span:last-child {
+	font-weight: var(--font-weight-bold);
+	color: var(--gray-900);
+	font-size: var(--font-size-md);
+}
+
+/* Summary Item Accent Colors */
+.summary-item:nth-child(1) {
+	border-left-color: var(--success-color);
+}
+
+.summary-item:nth-child(2) {
+	border-left-color: var(--warning-color);
+}
+
+.summary-item:nth-child(3) {
+	border-left-color: var(--info-color);
+}
+
+.summary-item:nth-child(4) {
+	border-left-color: var(--accent-color);
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+	.realtime-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.phase-card {
+		padding: var(--spacing-base);
+	}
+
+	.phase-card h3 {
+		font-size: var(--font-size-md);
+	}
+
+	.data-row {
+		font-size: var(--font-size-sm);
+		padding: var(--spacing-xs) var(--spacing-sm);
+	}
+
+	.data-row span:last-child {
+		font-size: var(--font-size-base);
+	}
+
+	.summary-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+
+@media (max-width: 640px) {
+	.realtime-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.phase-card {
+		padding: var(--spacing-base);
+	}
+
+	.data-row {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.summary-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.summary-item {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+}
