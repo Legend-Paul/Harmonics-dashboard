@@ -7,6 +7,7 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 } from "recharts";
+import "./Home.css";
 
 function Home({ data, voltageTrend }) {
 	return (
