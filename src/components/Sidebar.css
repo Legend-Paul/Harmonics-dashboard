@@ -1,0 +1,301 @@
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+.sidebar {
+	width: var(--sidebar-width);
+	min-height: 100vh;
+	background-color: var(--primary-color);
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	position: sticky;
+	top: 0;
+	height: 100vh;
+	overflow-y: auto;
+	transition: width var(--transition-base);
+	flex-shrink: 0;
+}
+
+/* ============================================
+   SIDEBAR HEADER
+   ============================================ */
+
+.sidebar-header {
+	padding: var(--spacing-lg) var(--spacing-lg);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 70px;
+}
+
+.sidebar-header h2 {
+	font-size: var(--font-size-lg);
+	font-weight: var(--font-weight-bold);
+	color: var(--accent-color);
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	margin: 0;
+	white-space: nowrap;
+}
+
+/* ============================================
+   SIDEBAR NAVIGATION
+   ============================================ */
+
+.sidebar-nav {
+	display: flex;
+	flex-direction: column;
+	padding: var(--spacing-base) 0;
+	gap: 4px;
+	flex: 1;
+}
+
+/* ============================================
+   NAV ITEM (Buttons)
+   ============================================ */
+
+.nav-item {
+	display: flex;
+	align-items: center;
+	gap: var(--spacing-md);
+	padding: var(--spacing-md) var(--spacing-lg);
+	background: none;
+	border: none;
+	color: rgba(255, 255, 255, 0.65);
+	font-family: var(--font-family);
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-medium);
+	text-align: left;
+	cursor: pointer;
+	transition: all var(--transition-base);
+	position: relative;
+	border-radius: 0;
+	outline: none;
+	width: 100%;
+}
+
+.nav-item:hover {
+	background-color: rgba(255, 255, 255, 0.05);
+	color: var(--white);
+}
+
+.nav-item:active {
+	transform: none;
+	box-shadow: none;
+}
+
+.nav-item.active {
+	background-color: rgba(0, 212, 255, 0.1);
+	color: var(--accent-color);
+}
+
+/* Active Indicator Bar (Left Border) */
+.nav-item.active::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 3px;
+	background-color: var(--accent-color);
+	border-radius: 0 3px 3px 0;
+}
+
+/* ============================================
+   NAV ICON
+   ============================================ */
+
+.nav-icon {
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	flex-shrink: 0;
+	transition: transform var(--transition-fast);
+}
+
+.nav-item:hover .nav-icon {
+	transform: scale(1.15);
+}
+
+.nav-item.active .nav-icon {
+	transform: scale(1.1);
+}
+
+/* ============================================
+   NAV LABEL
+   ============================================ */
+
+.nav-label {
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-medium);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	transition: opacity var(--transition-base);
+}
+
+/* ============================================
+   SIDEBAR FOOTER (Optional)
+   ============================================ */
+
+.sidebar-footer {
+	padding: var(--spacing-base) var(--spacing-lg);
+	border-top: 1px solid rgba(255, 255, 255, 0.08);
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.sidebar-footer-info {
+	font-size: var(--font-size-xs);
+	color: rgba(255, 255, 255, 0.4);
+	text-align: center;
+}
+
+.sidebar-footer-version {
+	font-size: var(--font-size-xs);
+	color: rgba(255, 255, 255, 0.3);
+	text-align: center;
+}
+
+/* ============================================
+   CUSTOM SCROLLBAR FOR SIDEBAR
+   ============================================ */
+
+.sidebar::-webkit-scrollbar {
+	width: 4px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.15);
+	border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.25);
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+	.sidebar {
+		width: 200px;
+	}
+
+	.sidebar-header h2 {
+		font-size: var(--font-size-md);
+	}
+
+	.nav-item {
+		padding: var(--spacing-sm) var(--spacing-md);
+	}
+
+	.nav-icon {
+		font-size: 16px;
+	}
+
+	.nav-label {
+		font-size: var(--font-size-sm);
+	}
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE (Collapsed Sidebar)
+   ============================================ */
+
+@media (max-width: 768px) {
+	.sidebar {
+		width: 60px;
+		align-items: center;
+	}
+
+	.sidebar-header {
+		padding: var(--spacing-md) 0;
+		justify-content: center;
+		min-height: 60px;
+	}
+
+	.sidebar-header h2 {
+		display: none;
+	}
+
+	/* Show only an icon or logo mark on mobile */
+	.sidebar-header::after {
+		content: "⚡";
+		font-size: 24px;
+		color: var(--accent-color);
+	}
+
+	.sidebar-nav {
+		padding: var(--spacing-sm) 0;
+		align-items: center;
+		width: 100%;
+	}
+
+	.nav-item {
+		justify-content: center;
+		padding: var(--spacing-md) 0;
+		gap: 0;
+		width: 100%;
+	}
+
+	.nav-label {
+		display: none;
+	}
+
+	.nav-icon {
+		font-size: 20px;
+		width: auto;
+	}
+
+	.nav-item.active::before {
+		left: 0;
+		width: 3px;
+	}
+
+	.sidebar-footer {
+		display: none;
+	}
+}
+
+/* ============================================
+   OPTIONAL — TOOLTIP ON HOVER (Mobile)
+   ============================================ */
+
+@media (max-width: 768px) {
+	.nav-item {
+		position: relative;
+	}
+
+	.nav-item::after {
+		content: attr(data-label);
+		position: absolute;
+		left: 70px;
+		top: 50%;
+		transform: translateY(-50%);
+		background-color: var(--gray-900);
+		color: var(--white);
+		padding: 4px 10px;
+		border-radius: var(--radius-sm);
+		font-size: var(--font-size-xs);
+		white-space: nowrap;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity var(--transition-fast);
+		z-index: var(--z-tooltip);
+	}
+
+	.nav-item:hover::after {
+		opacity: 1;
+	}
+}

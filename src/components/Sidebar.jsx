@@ -1,3 +1,4 @@
+import "./Sidebar.css";
 const menuItems = [
 	{ id: "home", label: "Home", icon: "🏠" },
 	{ id: "realtime", label: "Real-Time", icon: "📊" },
@@ -19,6 +20,8 @@ function Sidebar({ activePage, setActivePage }) {
 						key={item.id}
 						className={`nav-item ${activePage === item.id ? "active" : ""}`}
 						onClick={() => setActivePage(item.id)}
+						data-label={item.label}
+						title={item.label}
 					>
 						<span className="nav-icon">{item.icon}</span>
 						<span className="nav-label">{item.label}</span>
