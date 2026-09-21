@@ -85,7 +85,9 @@ function App() {
 				setActivePage={setActivePage}
 				navCollapsed={navCollapsed}
 			/>
-			<div className="main-content">
+			<div
+				className={`main-content ${!navCollapsed ? "collapsed-main-content" : "expanded-main-content"}`}
+			>
 				<Header
 					data={data}
 					setActivePage={setActivePage}

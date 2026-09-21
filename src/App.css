@@ -31,7 +31,19 @@ body {
 }
 
 .page {
+	margin-top: var(--header-height);
+	padding: var(--spacing-sm);
+	transition: var(--transition-base);
+}
+
+.main-content {
+	margin-left: var(--sidebar-width);
 	padding: var(--spacing-lg);
+	transition: var(--transition-base);
+}
+.expanded-main-content {
+	margin-left: 0 !important;
+	transition: var(--transition-base);
 }
 
 svg {
@@ -692,6 +704,13 @@ tr:hover {
 	}
 }
 
+@media (max-width: 1024px) {
+	.main-content {
+		margin-left: 150px;
+		transition: var(--transition-base);
+	}
+}
+
 @media (max-width: 768px) {
 	:root {
 		--sidebar-width: 60px;
@@ -720,6 +739,10 @@ tr:hover {
 
 	.nav-icon {
 		margin-right: 0;
+	}
+	.header {
+		margin-left: 60px;
+		transition: var(--transition-base);
 	}
 }
 
