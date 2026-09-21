@@ -6,7 +6,7 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import RealTime from "./pages/RealTime";
 import HarmonicAnalysis from "./pages/HarmonicAnalysis";
-import EnergyMonitoring from "./pages/EnergyMonitoring";
+import EnergyMonitoring from "./pages/EnergyMonitoring/EnergyMonitoring";
 import SystemStatus from "./pages/SystemStatus";
 import Settings from "./pages/Settings";
 import {

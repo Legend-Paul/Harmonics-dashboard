@@ -7,6 +7,7 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 } from "recharts";
+import "./EnergyMonitoring.css";
 
 function EnergyMonitoring({ data, energyTrend }) {
 	return (

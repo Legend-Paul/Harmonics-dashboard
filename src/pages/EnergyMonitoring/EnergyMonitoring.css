@@ -1,0 +1,180 @@
+/* ============================================
+   ENERGY CARDS (Today, This Week, This Month)
+   ============================================ */
+
+.energy-cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: var(--spacing-base);
+	margin-bottom: var(--spacing-lg);
+}
+
+.energy-card {
+	background-color: var(--white);
+	border-radius: var(--radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+	transition: all var(--transition-base);
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-sm);
+	position: relative;
+	overflow: hidden;
+	border-left: 4px solid var(--accent-color);
+}
+
+.energy-card:hover {
+	box-shadow: var(--shadow-md);
+	transform: translateY(-2px);
+}
+
+.energy-card h3 {
+	font-size: var(--font-size-sm);
+	font-weight: var(--font-weight-medium);
+	color: var(--gray-600);
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin: 0;
+}
+
+.energy-value {
+	font-size: var(--font-size-2xl);
+	font-weight: var(--font-weight-bold);
+	color: var(--gray-900);
+	margin: 0;
+	line-height: 1.2;
+}
+
+.energy-cost {
+	font-size: var(--font-size-base);
+	font-weight: var(--font-weight-semibold);
+	color: var(--accent-color);
+	margin: 0;
+}
+
+/* Card Accent Colors for Each Period */
+.energy-card:nth-child(1) {
+	border-left-color: var(--success-color);
+}
+
+.energy-card:nth-child(2) {
+	border-left-color: var(--info-color);
+}
+
+.energy-card:nth-child(3) {
+	border-left-color: var(--accent-color);
+}
+
+.energy-card:nth-child(1) .energy-cost {
+	color: var(--success-color);
+}
+
+.energy-card:nth-child(2) .energy-cost {
+	color: var(--info-color);
+}
+
+/* ============================================
+   SAVINGS CARD
+   ============================================ */
+
+.savings-card {
+	background-color: var(--white);
+	border-radius: var(--radius-lg);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-sm);
+	border-top: 4px solid var(--success-color);
+}
+
+.savings-card h3 {
+	font-size: var(--font-size-md);
+	font-weight: var(--font-weight-semibold);
+	color: var(--gray-800);
+	margin: 0 0 var(--spacing-base) 0;
+}
+
+.savings-grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: var(--spacing-base);
+}
+
+.savings-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: var(--spacing-md) var(--spacing-base);
+	background-color: var(--gray-50);
+	border-radius: var(--radius-md);
+	font-size: var(--font-size-base);
+	color: var(--gray-700);
+	border-left: 3px solid var(--gray-300);
+}
+
+.savings-item span:first-child {
+	font-weight: var(--font-weight-medium);
+	color: var(--gray-600);
+}
+
+.savings-item span:last-child {
+	font-weight: var(--font-weight-semibold);
+	color: var(--gray-900);
+}
+
+/* Savings Value Highlight */
+.savings-value {
+	color: var(--success-color) !important;
+	font-weight: var(--font-weight-bold) !important;
+}
+
+/* Highlight Savings Items */
+.savings-item:nth-child(3),
+.savings-item:nth-child(4) {
+	background-color: var(--success-light);
+	border-left-color: var(--success-color);
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+   ============================================ */
+
+@media (max-width: 1024px) {
+	.energy-cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	.energy-value {
+		font-size: var(--font-size-xl);
+	}
+
+	.savings-grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
+   ============================================ */
+
+@media (max-width: 640px) {
+	.energy-cards {
+		grid-template-columns: 1fr;
+	}
+
+	.energy-card {
+		padding: var(--spacing-base);
+	}
+
+	.energy-value {
+		font-size: var(--font-size-lg);
+	}
+
+	.savings-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.savings-item {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--spacing-xs);
+	}
+}
