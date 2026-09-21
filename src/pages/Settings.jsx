@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-
 function Settings() {
 	const [settings, setSettings] = useState({
 		voltageThdLimit: 5,

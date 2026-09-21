@@ -1,5 +1,3 @@
-import React from "react";
-
 function RealTime({ data }) {
 	const phases = ["R", "Y", "B"];
 

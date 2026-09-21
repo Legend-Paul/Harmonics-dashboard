@@ -1,5 +1,3 @@
-import React from "react";
-
 function SystemStatus({ data }) {
 	return (
 		<div className="page">
