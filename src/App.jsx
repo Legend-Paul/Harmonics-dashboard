@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./index.css";
 import "./App.css";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
 import Home from "./pages/Home";
 import RealTime from "./pages/RealTime";

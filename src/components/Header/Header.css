@@ -20,10 +20,16 @@
 	}
 }
 
-.header .header-right {
+.header .header-right,
+header .header-left {
 	display: flex;
 	align-items: center;
 	gap: var(--spacing-md);
+	svg {
+		fill: var(--gray-300);
+		cursor: pointer;
+		transition: fill var(--transition-fast);
+	}
 }
 
 .header .online {
