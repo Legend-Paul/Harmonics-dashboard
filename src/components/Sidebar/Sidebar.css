@@ -59,7 +59,7 @@
 
 .nav-item {
 	display: flex;
-	align-items: center;
+	justify-content: start;
 	gap: var(--spacing-md);
 	padding: var(--spacing-md) var(--spacing-lg);
 	background: none;
