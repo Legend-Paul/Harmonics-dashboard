@@ -740,7 +740,7 @@ tr:hover {
 	.nav-icon {
 		margin-right: 0;
 	}
-	.header {
+	.main-content {
 		margin-left: 60px;
 		transition: var(--transition-base);
 	}
@@ -749,15 +749,5 @@ tr:hover {
 @media (max-width: 480px) {
 	.main-content {
 		padding: var(--spacing-sm);
-	}
-
-	.header {
-		flex-direction: column;
-		gap: var(--spacing-sm);
-		align-items: flex-start;
-	}
-
-	.header h1 {
-		font-size: var(--font-size-md);
 	}
 }

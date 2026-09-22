@@ -23,7 +23,7 @@ function Header({ data, setNavCollapsed, navCollapsed }) {
 					<line x1="3" y1="12" x2="21" y2="12" />
 					<line x1="3" y1="18" x2="21" y2="18" />
 				</svg>
-				<h1>Smart Energy Monitoring System</h1>
+				<h1>Monitoring System</h1>
 			</div>
 			<div className="header-right">
 				<span className={`status-badge ${data.status}`}>

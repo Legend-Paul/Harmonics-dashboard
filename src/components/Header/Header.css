@@ -12,7 +12,7 @@
 	left: var(--sidebar-width);
 	right: 0;
 	z-index: var(--z-dropdown);
-	transition: var(--transition-base);
+	transition: left var(--transition-base);
 	h1 {
 		font-size: var(--font-size-lg);
 		font-weight: var(--font-weight-bold);
@@ -51,7 +51,7 @@ header .header-left {
 
 .expanded-header {
 	left: 0 !important;
-	transition: var(--transition-base);
+	transition: left var(--transition-base);
 }
 
 /* ============================================
@@ -60,7 +60,7 @@ header .header-left {
 @media (max-width: 1024px) {
 	.header {
 		left: 150px;
-		transition: var(--transition-base);
+		transition: left var(--transition-base);
 	}
 }
 
@@ -70,6 +70,18 @@ header .header-left {
 @media (max-width: 768px) {
 	.header {
 		left: 60px;
-		transition: var(--transition-base);
+		transition: left var(--transition-base);
+	}
+}
+
+@media (max-width: 480px) {
+	.header {
+		/* flex-direction: column; */
+		gap: var(--spacing-sm);
+		align-items: flex-start;
+	}
+
+	.header h1 {
+		font-size: var(--font-size-md);
 	}
 }
