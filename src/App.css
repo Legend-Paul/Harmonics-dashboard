@@ -744,9 +744,11 @@ tr:hover {
 	.nav-icon {
 		margin-right: 0;
 	}
+
 	.main-content {
-		margin-left: 60px;
+		margin-left: 0px;
 		transition: var(--transition-base);
+		padding-bottom: calc(var(--sidebar-height) * 2) !important;
 	}
 }
 

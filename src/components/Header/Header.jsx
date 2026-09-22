@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 function Header({ data, setNavCollapsed, navCollapsed }) {
 	const handleNavCollapsing = () => {
@@ -8,6 +9,11 @@ function Header({ data, setNavCollapsed, navCollapsed }) {
 			className={`header ${!navCollapsed ? "collapsed-header" : "expanded-header"}`}
 		>
 			<div className="header-left">
+				<div className="logo-container">
+					<NavLink to="/" className="logo-link">
+						<span>⚡</span>
+					</NavLink>
+				</div>
 				<svg
 					width="20"
 					height="20"
@@ -18,6 +24,7 @@ function Header({ data, setNavCollapsed, navCollapsed }) {
 					strokeLinecap="round"
 					strokeLinejoin="round"
 					onClick={handleNavCollapsing}
+					className="menu-button"
 				>
 					<line x1="3" y1="6" x2="21" y2="6" />
 					<line x1="3" y1="12" x2="21" y2="12" />

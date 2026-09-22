@@ -2,14 +2,15 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: var(--spacing-md) var(--spacing-lg);
+	padding: 0 var(--spacing-md) 0 0;
+	/* padding: var(--spacing-md) var(--spacing-lg); */
 	background-color: var(--primary-light);
 	color: var(--gray-300);
 	height: var(--header-height);
 	box-shadow: var(--shadow-sm);
 	position: fixed;
 	top: 0;
-	left: var(--sidebar-width);
+	left: 0;
 	right: 0;
 	z-index: var(--z-dropdown);
 	transition: left var(--transition-base);
@@ -55,22 +56,45 @@ header .header-left {
 }
 
 /* ============================================
+   LOGO CONTAINER
+   ============================================ */
+
+.logo-container {
+	padding: var(--spacing-sm) var(--spacing-sm);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: var(--header-height);
+	width: var(--header-height);
+	background-color: var(--primary-dark);
+}
+
+.logo-container a {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* font-size: 24px; */
+	color: var(--accent-color);
+}
+
+/* ============================================
    RESPONSIVE — TABLET
    ============================================ */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
 	.header {
 		left: 150px;
 		transition: left var(--transition-base);
 	}
-}
+} */
 
 /* ============================================
    RESPONSIVE — MOBILE (Collapsed Sidebar)
    ============================================ */
 @media (max-width: 768px) {
-	.header {
-		left: 60px;
-		transition: left var(--transition-base);
+	.menu-button {
+		display: none;
 	}
 }
 

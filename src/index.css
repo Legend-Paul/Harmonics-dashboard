@@ -59,6 +59,7 @@
 	--line-height: 1.5;
 
 	/* Spacing */
+	--spacing-xxs: 0.125rem;
 	--spacing-xs: 0.25rem;
 	--spacing-sm: 0.5rem;
 	--spacing-md: 0.75rem;
@@ -89,6 +90,7 @@
 	/* Sidebar */
 	--sidebar-width: 220px;
 	--sidebar-collapsed-width: 60px;
+	--sidebar-height: 3rem;
 
 	/* Header */
 	--header-height: 60px;

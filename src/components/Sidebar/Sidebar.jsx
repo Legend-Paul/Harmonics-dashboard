@@ -126,12 +126,6 @@ function Sidebar({ navCollapsed }) {
 		<div
 			className={`sidebar ${navCollapsed ? "collapsed-sidebar" : "expanded-sidebar"}`}
 		>
-			<div className="sidebar-header">
-				{/* <h2>ESP32 AHF</h2> */}
-				<NavLink to="/" className="logo-link">
-					<span>⚡</span>
-				</NavLink>
-			</div>
 			<nav className="sidebar-nav">
 				{menuItems.map((item) => (
 					<NavLink
@@ -139,8 +133,6 @@ function Sidebar({ navCollapsed }) {
 						to={item.path}
 						end={item.path === "/"}
 						className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
-						data-label={item.label}
-						title={item.label}
 					>
 						<span className="nav-icon" aria-hidden="true">
 							{item.icon}
