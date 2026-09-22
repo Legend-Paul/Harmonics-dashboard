@@ -16,6 +16,7 @@
 	transition: width var(--transition-base);
 	flex-shrink: 0;
 	z-index: var(--z-dropdown);
+	overflow: hidden;
 }
 
 /* ============================================
@@ -278,14 +279,15 @@
 	}
 
 	.nav-item {
-		justify-content: center;
+		flex-direction: column;
+		justify-content: start;
 		padding: var(--spacing-md) 0;
-		gap: 0;
+		gap: var(--spacing-xs);
 		width: 100%;
 	}
 
 	.nav-label {
-		display: none;
+		display: block;
 	}
 
 	.nav-icon {
