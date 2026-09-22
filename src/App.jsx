@@ -1,111 +1,37 @@
-import { useState, useEffect } from "react";
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
 	Route,
 	RouterProvider,
-	Outlet,
 } from "react-router-dom";
 
 import "./index.css";
 import "./App.css";
-import Sidebar from "./components/Sidebar/Sidebar";
-import Header from "./components/Header/Header";
+import RootLayout from "./layouts/RootLayout";
 import Home from "./pages/Home/Home";
 import RealTime from "./pages/RealTime/RealTime";
 import HarmonicAnalysis from "./pages/HarmonicAnalysis/HarmonicAnalysis";
 import EnergyMonitoring from "./pages/EnergyMonitoring/EnergyMonitoring";
 import SystemStatus from "./pages/SystemStatus/SystemStatus";
 import Settings from "./pages/Settings/Settings";
-import {
-	dummyData,
-	voltageTrend,
-	energyTrend,
-	harmonicSpectrum,
-} from "./data/dummyData";
+import NotFound from "./pages/NotFound/NotFound";
+
+const router = createBrowserRouter(
+	createRoutesFromElements(
+		<Route path="/" element={<RootLayout />}>
+			<Route index element={<Home />} />
+			<Route path="realtime" element={<RealTime />} />
+			<Route path="harmonic" element={<HarmonicAnalysis />} />
+			<Route path="energy" element={<EnergyMonitoring />} />
+			<Route path="status" element={<SystemStatus />} />
+			<Route path="settings" element={<Settings />} />
+			<Route path="*" element={<NotFound />} />
+		</Route>,
+	),
+);
 
 function App() {
-	const [activePage, setActivePage] = useState("home");
-	const [data, setData] = useState(dummyData);
-	const [loading, setLoading] = useState(false);
-	const [navCollapsed, setNavCollapsed] = useState(false);
-
-	// Simulate ESP32 data updates every 5 seconds
-	useEffect(() => {
-		const interval = setInterval(() => {
-			setData({
-				...dummyData,
-				timestamp: new Date().toISOString(),
-				phases: {
-					R: {
-						...dummyData.phases.R,
-						voltage: (415 + Math.random() * 4 - 2).toFixed(1),
-						current: (25 + Math.random() * 2 - 1).toFixed(1),
-						thd_voltage: (2.8 + Math.random() * 0.4 - 0.2).toFixed(1),
-						thd_current: (3.5 + Math.random() * 0.4 - 0.2).toFixed(1),
-					},
-					Y: {
-						...dummyData.phases.Y,
-						voltage: (414 + Math.random() * 4 - 2).toFixed(1),
-						current: (25.5 + Math.random() * 2 - 1).toFixed(1),
-						thd_voltage: (2.9 + Math.random() * 0.4 - 0.2).toFixed(1),
-						thd_current: (3.6 + Math.random() * 0.4 - 0.2).toFixed(1),
-					},
-					B: {
-						...dummyData.phases.B,
-						voltage: (416 + Math.random() * 4 - 2).toFixed(1),
-						current: (25.2 + Math.random() * 2 - 1).toFixed(1),
-						thd_voltage: (2.7 + Math.random() * 0.4 - 0.2).toFixed(1),
-						thd_current: (3.4 + Math.random() * 0.4 - 0.2).toFixed(1),
-					},
-				},
-			});
-		}, 5000);
-
-		return () => clearInterval(interval);
-	}, []);
-
-	const renderPage = () => {
-		switch (activePage) {
-			case "home":
-				return <Home data={data} voltageTrend={voltageTrend} />;
-			case "realtime":
-				return <RealTime data={data} />;
-			case "harmonic":
-				return (
-					<HarmonicAnalysis data={data} harmonicSpectrum={harmonicSpectrum} />
-				);
-			case "energy":
-				return <EnergyMonitoring data={data} energyTrend={energyTrend} />;
-			case "status":
-				return <SystemStatus data={data} />;
-			case "settings":
-				return <Settings />;
-			default:
-				return <Home data={data} voltageTrend={voltageTrend} />;
-		}
-	};
-
-	return (
-		<div className="app">
-			<Sidebar
-				activePage={activePage}
-				setActivePage={setActivePage}
-				navCollapsed={navCollapsed}
-			/>
-			<div
-				className={`main-content ${!navCollapsed ? "collapsed-main-content" : "expanded-main-content"}`}
-			>
-				<Header
-					data={data}
-					setActivePage={setActivePage}
-					setNavCollapsed={setNavCollapsed}
-					navCollapsed={navCollapsed}
-				/>
-				{renderPage()}
-			</div>
-		</div>
-	);
+	return <RouterProvider router={router} />;
 }
 
 export default App;

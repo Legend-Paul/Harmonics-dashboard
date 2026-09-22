@@ -16,6 +16,11 @@
 	transition: width var(--transition-base);
 	flex-shrink: 0;
 	z-index: var(--z-dropdown);
+	.sidebar-header::after {
+		content: "⚡";
+		font-size: 24px;
+		color: var(--accent-color);
+	}
 }
 
 /* ============================================
@@ -52,14 +57,13 @@
 	gap: 4px;
 	flex: 1;
 }
-
 /* ============================================
-   NAV ITEM (Buttons)
+   NAV ITEM (NavLink Styling)
    ============================================ */
 
 .nav-item {
 	display: flex;
-	justify-content: start;
+	align-items: center;
 	gap: var(--spacing-md);
 	padding: var(--spacing-md) var(--spacing-lg);
 	background: none;
@@ -75,16 +79,14 @@
 	border-radius: 0;
 	outline: none;
 	width: 100%;
+	text-decoration: none; /* Important for NavLink anchor tags */
+	box-sizing: border-box;
 }
 
 .nav-item:hover {
 	background-color: rgba(255, 255, 255, 0.05);
 	color: var(--white);
-}
-
-.nav-item:active {
-	transform: none;
-	box-shadow: none;
+	text-decoration: none;
 }
 
 .nav-item.active {
@@ -92,7 +94,6 @@
 	color: var(--accent-color);
 }
 
-/* Active Indicator Bar (Left Border) */
 .nav-item.active::before {
 	content: "";
 	position: absolute;
@@ -102,6 +103,15 @@
 	width: 3px;
 	background-color: var(--accent-color);
 	border-radius: 0 3px 3px 0;
+}
+
+.nav-item:focus {
+	outline: none;
+}
+
+.nav-item:focus-visible {
+	outline: 2px solid var(--accent-color);
+	outline-offset: -2px;
 }
 
 /* ============================================
@@ -245,16 +255,16 @@
 		min-height: 60px;
 	}
 
-	.sidebar-header h2 {
+	/* .sidebar-header h2 {
 		display: none;
-	}
+	} */
 
 	/* Show only an icon or logo mark on mobile */
-	.sidebar-header::after {
+	/* .sidebar-header::after {
 		content: "⚡";
 		font-size: 24px;
 		color: var(--accent-color);
-	}
+	} */
 
 	.sidebar-nav {
 		padding: var(--spacing-sm) 0;
