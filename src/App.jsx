@@ -3,11 +3,11 @@ import "./index.css";
 import "./App.css";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Header from "./components/Header/Header";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import RealTime from "./pages/RealTime/RealTime";
 import HarmonicAnalysis from "./pages/HarmonicAnalysis/HarmonicAnalysis";
 import EnergyMonitoring from "./pages/EnergyMonitoring/EnergyMonitoring";
-import SystemStatus from "./pages/SystemStatus";
+import SystemStatus from "./pages/SystemStatus/SystemStatus";
 import Settings from "./pages/Settings/Settings";
 import {
 	dummyData,
