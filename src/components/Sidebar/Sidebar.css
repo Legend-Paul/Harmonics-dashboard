@@ -224,7 +224,7 @@
 	.sidebar {
 		position: fixed;
 		top: auto;
-		bottom: 2rem;
+		bottom: 1rem;
 		left: 50%;
 		border-radius: var(--radius-lg) !important;
 		padding: var(--spacing-md) var(--spacing-lg);
