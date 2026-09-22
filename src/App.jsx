@@ -1,4 +1,12 @@
 import { useState, useEffect } from "react";
+import {
+	createBrowserRouter,
+	createRoutesFromElements,
+	Route,
+	RouterProvider,
+	Outlet,
+} from "react-router-dom";
+
 import "./index.css";
 import "./App.css";
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -15,6 +23,8 @@ import {
 	energyTrend,
 	harmonicSpectrum,
 } from "./data/dummyData";
+
+const router = createBrowserRouter(createRoutesFromElements(<></>));
 
 function App() {
 	const [activePage, setActivePage] = useState("home");
