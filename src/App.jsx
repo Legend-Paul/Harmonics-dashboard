@@ -24,8 +24,6 @@ import {
 	harmonicSpectrum,
 } from "./data/dummyData";
 
-const router = createBrowserRouter(createRoutesFromElements(<></>));
-
 function App() {
 	const [activePage, setActivePage] = useState("home");
 	const [data, setData] = useState(dummyData);

@@ -1,9 +1,11 @@
+import { NavLink } from "react-router-dom";
 import "./Sidebar.css";
 
 const menuItems = [
 	{
 		id: "home",
 		label: "Home",
+		path: "/",
 		icon: (
 			<svg
 				width="20"
@@ -22,6 +24,7 @@ const menuItems = [
 	{
 		id: "realtime",
 		label: "Real-Time",
+		path: "/realtime",
 		icon: (
 			<svg
 				width="20"
@@ -41,6 +44,7 @@ const menuItems = [
 	{
 		id: "harmonic",
 		label: "Harmonics",
+		path: "/harmonic",
 		icon: (
 			<svg
 				width="20"
@@ -59,6 +63,7 @@ const menuItems = [
 	{
 		id: "energy",
 		label: "Energy",
+		path: "/energy",
 		icon: (
 			<svg
 				width="20"
@@ -77,6 +82,7 @@ const menuItems = [
 	{
 		id: "status",
 		label: "Status",
+		path: "/status",
 		icon: (
 			<svg
 				width="20"
@@ -96,6 +102,7 @@ const menuItems = [
 	{
 		id: "settings",
 		label: "Settings",
+		path: "/settings",
 		icon: (
 			<svg
 				width="20"
@@ -114,7 +121,7 @@ const menuItems = [
 	},
 ];
 
-function Sidebar({ activePage, setActivePage, navCollapsed }) {
+function Sidebar({ navCollapsed }) {
 	return (
 		<div
 			className={`sidebar ${navCollapsed ? "collapsed-sidebar" : "expanded-sidebar"}`}
@@ -124,20 +131,19 @@ function Sidebar({ activePage, setActivePage, navCollapsed }) {
 			</div>
 			<nav className="sidebar-nav">
 				{menuItems.map((item) => (
-					<button
+					<NavLink
 						key={item.id}
-						type="button"
-						className={`nav-item ${activePage === item.id ? "active" : ""}`}
-						onClick={() => setActivePage(item.id)}
+						to={item.path}
+						end={item.path === "/"}
+						className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
 						data-label={item.label}
 						title={item.label}
-						aria-current={activePage === item.id ? "page" : undefined}
 					>
 						<span className="nav-icon" aria-hidden="true">
 							{item.icon}
 						</span>
 						<span className="nav-label">{item.label}</span>
-					</button>
+					</NavLink>
 				))}
 			</nav>
 		</div>
