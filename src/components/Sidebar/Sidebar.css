@@ -16,11 +16,6 @@
 	transition: width var(--transition-base);
 	flex-shrink: 0;
 	z-index: var(--z-dropdown);
-	.sidebar-header::after {
-		content: "⚡";
-		font-size: 24px;
-		color: var(--accent-color);
-	}
 }
 
 /* ============================================
@@ -44,6 +39,16 @@
 	text-transform: uppercase;
 	margin: 0;
 	white-space: nowrap;
+}
+
+.sidebar-header a {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	color: var(--accent-color);
 }
 
 /* ============================================
