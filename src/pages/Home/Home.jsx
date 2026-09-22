@@ -8,8 +8,11 @@ import {
 	ResponsiveContainer,
 } from "recharts";
 import "./Home.css";
+import { useOutletContext } from "react-router-dom";
+import { voltageTrend } from "../../data/dummyData";
 
-function Home({ data, voltageTrend }) {
+function Home() {
+	const { data } = useOutletContext();
 	return (
 		<div className="page">
 			<div className="cards-grid">

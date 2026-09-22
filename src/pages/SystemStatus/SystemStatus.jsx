@@ -1,7 +1,9 @@
 import { useState } from "react";
 import "./SystemStatus.css";
+import { useOutletContext } from "react-router-dom";
 
-function SystemStatus({ data }) {
+function SystemStatus() {
+	const { data } = useOutletContext();
 	const [filter, setFilter] = useState("all");
 
 	const filteredAlerts = data.alerts.filter((alert) => {

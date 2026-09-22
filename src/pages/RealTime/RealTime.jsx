@@ -1,5 +1,8 @@
 import "./RealTime.css";
-function RealTime({ data }) {
+import { useOutletContext } from "react-router-dom";
+
+function RealTime() {
+	const { data } = useOutletContext();
 	const phases = ["R", "Y", "B"];
 
 	return (

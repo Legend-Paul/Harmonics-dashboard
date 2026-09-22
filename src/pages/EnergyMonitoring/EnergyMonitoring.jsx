@@ -8,8 +8,11 @@ import {
 	ResponsiveContainer,
 } from "recharts";
 import "./EnergyMonitoring.css";
+import { useOutletContext } from "react-router-dom";
+import { energyTrend } from "../../data/dummyData";
 
-function EnergyMonitoring({ data, energyTrend }) {
+function EnergyMonitoring() {
+	const { data } = useOutletContext();
 	return (
 		<div className="page">
 			<h2>Energy Monitoring</h2>

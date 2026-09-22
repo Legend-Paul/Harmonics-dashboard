@@ -8,8 +8,11 @@ import {
 	ResponsiveContainer,
 } from "recharts";
 import "./HarmonicAnalysis.css";
+import { useOutletContext } from "react-router-dom";
+import { harmonicSpectrum } from "../../data/dummyData";
 
-function HarmonicAnalysis({ data, harmonicSpectrum }) {
+function HarmonicAnalysis() {
+	const { data } = useOutletContext();
 	return (
 		<div className="page">
 			<h2>Harmonic Analysis</h2>
